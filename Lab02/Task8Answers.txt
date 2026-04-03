@@ -1,0 +1,3 @@
+Trả lời: Không.
+
+Trong Java, việc nạp chồng phương thức (method overloading) được định đoạt bởi chữ ký phương thức (method signature). Chữ ký này chỉ xét đến tên hàm và kiểu dữ liệu của tham số, hoàn toàn bỏ qua tên biến do lập trình viên đặt. Nếu bạn viết DigitalVideoDisc(String title) và DigitalVideoDisc(String category), trình biên dịch sẽ đánh giá cả hai hàm này có chung chữ ký là DigitalVideoDisc(String). Hệ thống không thể phân biệt được hai hàm này vì chúng đều nhận vào một chuỗi String duy nhất, dẫn đến lỗi biên dịch do trùng lặp phương thức (Duplicate method).
