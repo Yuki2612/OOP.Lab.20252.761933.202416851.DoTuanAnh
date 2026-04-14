@@ -1,0 +1,3 @@
+Q1:
+- Nếu chọn cancel thì màn hình sẽ hiện thị option "No"
+- Để custom các option thì: Sử dụng JOptionPane.Yes_No_Option hoặc tạo một Object custom ( "I do","I dont") cho 2 lựa chọn)
