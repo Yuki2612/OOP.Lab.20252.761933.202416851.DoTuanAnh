@@ -24,5 +24,6 @@ public class NoGarbage {
         
         endTime = System.currentTimeMillis();
         System.out.println("Thoi gian chay cua NoGarbage (su dung StringBuilder): " + (endTime - startTime) + " ms");
-    }
+     // This comment is added for Task 10: Release flow demonstration 
+        }
 }
