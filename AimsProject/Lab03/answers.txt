@@ -16,3 +16,8 @@ Trả lời: Bản sao biến tham chiếu được truyền vào hàm tuy là b
  TASK 6: Print Cart 
 Câu hỏi: Viết phương thức toString() cho lớp DigitalVideoDisc. Kiểu trả về nên là gì?
 Trả lời: Kiểu trả về bắt buộc phải là String.
+
+ TASK 9: String, StringBuilder and StringBuffer
+- String: Là đối tượng bất biến (immutable). Khi nối chuỗi bằng "+", Java tạo ra đối tượng mới liên tục, gây tốn bộ nhớ và chạy chậm trong vòng lặp lớn.
+- StringBuilder: Là đối tượng có thể thay đổi (mutable). Nó thao tác trên một bộ đệm duy nhất, tốc độ nhanh hơn hàng ngàn lần và không sinh rác bộ nhớ khi nối chuỗi.
+- Kết luận: Luôn dùng StringBuilder (hoặc StringBuffer cho đa luồng) khi cần nối chuỗi liên tục hoặc xử lý trong vòng lặp.
