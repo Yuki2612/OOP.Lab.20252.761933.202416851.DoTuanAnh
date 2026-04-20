@@ -5,3 +5,10 @@ Trả lời:
   + Dùng mảng (DigitalVideoDisc[]): Phía gọi hàm bắt buộc phải khởi tạo một đối tượng mảng mới mỗi lần truyền vào. Cú pháp sẽ dài dòng và dư thừa (VD: cart.addDigitalVideoDisc(new DigitalVideoDisc[]{dvd1, dvd2})).
   + Dùng varargs (DigitalVideoDisc...): Cho phép truyền trực tiếp danh sách các đối tượng, cách nhau bằng dấu phẩy. Java sẽ tự động gom chúng thành mảng ở hậu trường. Cú pháp gọn gàng hơn (VD: cart.addDigitalVideoDisc(dvd1, dvd2)).
 - Lựa chọn: ưu tiên dùng varargs hơn vì nó giúp cú pháp ở phía gọi hàm (caller) sạch sẽ, tự nhiên và dễ đọc hơn nhiều, không phải mất công tạo mảng thủ công.
+
+ TASK 3: Passing Parameter 
+Câu hỏi 1: Sau khi gọi swap(jungleDVD, cinderellaDVD), tại sao tiêu đề của hai đối tượng này vẫn giữ nguyên? 
+Trả lời: Vì Java hoàn toàn là ngôn ngữ "Truyền theo giá trị" (Pass by Value). Khi truyền đối tượng vào hàm swap, tham số nhận được chỉ là "bản sao" của các biến tham chiếu. Việc hoán đổi o1 và o2 bên trong hàm chỉ làm thay đổi đích trỏ đến của các bản sao này, hoàn toàn không tác động đến biến tham chiếu gốc (jungleDVD và cinderellaDVD) ở ngoài hàm.
+
+Câu hỏi 2: Sau khi gọi changeTitle(jungleDVD, cinderellaDVD.getTitle()), tại sao tiêu đề của jungleDVD lại bị thay đổi? 
+Trả lời: Bản sao biến tham chiếu được truyền vào hàm tuy là bản copy, nhưng nó vẫn trỏ đến ĐÚNG đối tượng thực thể trên bộ nhớ Heap. Do đó, khi gọi lệnh dvd.setTitle(), dữ liệu của đối tượng thực sự bị biến đổi. Lệnh gán dvd = new... ngay sau đó chỉ làm bản sao trỏ đi nơi khác, vô tác dụng với đối tượng gốc ngoài hàm.
