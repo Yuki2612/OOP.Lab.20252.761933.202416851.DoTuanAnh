@@ -1,4 +1,6 @@
-package AimsPackage;
+package hust.soict.dsai.test.digital;
+import AimsPackage.Cart;
+import AimsPackage.DigitalVideoDisc;
 
 public class TestPassingParameter {
     public static void main(String[] args) {
