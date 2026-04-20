@@ -1,5 +1,6 @@
 package hust.soict.dsai.aim;
 
+
 import hust.soict.dsai.aims.cart.Cart;
 import hust.soict.dsai.aims.disc.DigitalVideoDisc;
 
@@ -27,9 +28,5 @@ public class Aims {
 
         System.out.print("Total Cost after removing is: ");
         System.out.println(anOrder.totalCost());
-
-        DigitalVideoDisc dvd4 = new DigitalVideoDisc("Avatar", "Science Fiction", 20.00f);
-        System.out.println("Tien hanh xoa dia khong ton tai: " + dvd4.getTitle());
-        anOrder.removeDigitalVideoDisc(dvd4);
     }
 }
