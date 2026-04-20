@@ -1,4 +1,4 @@
-package AimsPackage;
+package hust.soict.dsai.aims.disc;
 
 public class DigitalVideoDisc {
 	public void setTitle(String title) {
