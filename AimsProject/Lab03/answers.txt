@@ -1,0 +1,7 @@
+TASK 2.1: Method Overloading 
+Câu hỏi: Thêm phương thức addDigitalVideoDisc cho phép truyền số lượng đối số tùy ý (varargs). So sánh nó với tham số mảng (array). Bạn thích dùng cách nào hơn trong trường hợp này? 
+Trả lời:
+- So sánh:
+  + Dùng mảng (DigitalVideoDisc[]): Phía gọi hàm bắt buộc phải khởi tạo một đối tượng mảng mới mỗi lần truyền vào. Cú pháp sẽ dài dòng và dư thừa (VD: cart.addDigitalVideoDisc(new DigitalVideoDisc[]{dvd1, dvd2})).
+  + Dùng varargs (DigitalVideoDisc...): Cho phép truyền trực tiếp danh sách các đối tượng, cách nhau bằng dấu phẩy. Java sẽ tự động gom chúng thành mảng ở hậu trường. Cú pháp gọn gàng hơn (VD: cart.addDigitalVideoDisc(dvd1, dvd2)).
+- Lựa chọn: ưu tiên dùng varargs hơn vì nó giúp cú pháp ở phía gọi hàm (caller) sạch sẽ, tự nhiên và dễ đọc hơn nhiều, không phải mất công tạo mảng thủ công.
