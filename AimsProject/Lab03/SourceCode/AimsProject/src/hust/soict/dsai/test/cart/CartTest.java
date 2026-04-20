@@ -10,5 +10,9 @@ public class CartTest {
         DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars", "Science Fiction", "George Lucas", 87, 24.95f);
         cart.addDigitalVideoDisc(dvd2);
         cart.print();
-    }
-}
+        System.out.println("\n--- Search Results ---");
+        cart.search(2); 
+        cart.search("Aladin"); 
+        cart.search("Iron Man"); 
+    }}
+

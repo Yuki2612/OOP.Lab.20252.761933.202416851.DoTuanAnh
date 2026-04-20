@@ -12,3 +12,7 @@ Trả lời: Vì Java hoàn toàn là ngôn ngữ "Truyền theo giá trị" (Pa
 
 Câu hỏi 2: Sau khi gọi changeTitle(jungleDVD, cinderellaDVD.getTitle()), tại sao tiêu đề của jungleDVD lại bị thay đổi? 
 Trả lời: Bản sao biến tham chiếu được truyền vào hàm tuy là bản copy, nhưng nó vẫn trỏ đến ĐÚNG đối tượng thực thể trên bộ nhớ Heap. Do đó, khi gọi lệnh dvd.setTitle(), dữ liệu của đối tượng thực sự bị biến đổi. Lệnh gán dvd = new... ngay sau đó chỉ làm bản sao trỏ đi nơi khác, vô tác dụng với đối tượng gốc ngoài hàm.
+
+ TASK 6: Print Cart 
+Câu hỏi: Viết phương thức toString() cho lớp DigitalVideoDisc. Kiểu trả về nên là gì?
+Trả lời: Kiểu trả về bắt buộc phải là String.
