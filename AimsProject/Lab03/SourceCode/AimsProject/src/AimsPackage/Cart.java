@@ -6,6 +6,15 @@ public class Cart {
     private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
 
     private int qtyOrdered = 0;
+    public void addDigitalVideoDisc(DigitalVideoDisc disc) {
+        if (qtyOrdered < MAX_NUMBERS_ORDERED) {
+            itemsOrdered[qtyOrdered] = disc;
+            qtyOrdered++;
+            System.out.println("The disc has been added");
+        } else {
+            System.out.println("The cart is almost full");
+        }
+    }
 
     public void addDigitalVideoDisc(DigitalVideoDisc... dvdList) {
         for (DigitalVideoDisc dvd : dvdList) {
@@ -44,5 +53,14 @@ public class Cart {
             total += itemsOrdered[i].getCost();
         }
         return total;
+    }
+    public void print() {
+        System.out.println("***********************CART***********************");
+        System.out.println("Ordered Items:");
+        for (int i = 0; i < qtyOrdered; i++) {
+            System.out.println((i + 1) + ". " + itemsOrdered[i].toString());
+        }
+        System.out.println("Total cost: " + totalCost());
+        System.out.println("***************************************************");
     }
 }

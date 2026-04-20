@@ -4,7 +4,12 @@ public class DigitalVideoDisc {
 	public void setTitle(String title) {
 	    this.title = title;
 	}
-	
+	public boolean isMatch(String title) {
+	    return this.getTitle().toLowerCase().contains(title.toLowerCase());
+	}
+	public String toString() {
+	    return "DVD - " + getTitle() + " - " + getCategory() + " - " + getDirector() + " - " + getLength() + ": " + getCost() + " $";
+	}
 	    private String title;
 	    private String category;
 	    private String director;
