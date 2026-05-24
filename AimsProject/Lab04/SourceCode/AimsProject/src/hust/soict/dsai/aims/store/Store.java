@@ -1,39 +1,44 @@
 package hust.soict.dsai.aims.store;
 
-import hust.soict.dsai.aims.media.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.Media;
+import java.util.ArrayList;
 
 public class Store {
+    private ArrayList<Media> itemsInStore = new ArrayList<Media>();
 
-    private DigitalVideoDisc itemsInStore[] = new DigitalVideoDisc[50];
-    private int qtyInStore = 0;
-
-    public void addDVD(DigitalVideoDisc dvd) {
-        if (qtyInStore < itemsInStore.length) {
-            itemsInStore[qtyInStore] = dvd;
-            qtyInStore++;
-            System.out.println("The dvd '" + dvd.getTitle() + "' has been added to the store.");
+    public void addMedia(Media media) {
+        if (!itemsInStore.contains(media)) {
+            itemsInStore.add(media);
+            System.out.println("Đã thêm \"" + media.getTitle() + "\" vào cửa hàng.");
         } else {
-            System.out.println("The store is full.");
+            System.out.println("\"" + media.getTitle() + "\" đã tồn tại trong cửa hàng.");
         }
     }
 
-    public void removeDVD(DigitalVideoDisc dvd) {
-        boolean isFound = false;
-        for (int i = 0; i < qtyInStore; i++) {
-            if (itemsInStore[i] == dvd) {
-                isFound = true;
-
-                for (int j = i; j < qtyInStore - 1; j++) {
-                    itemsInStore[j] = itemsInStore[j + 1];
-                }
-                itemsInStore[qtyInStore - 1] = null; 
-                qtyInStore--;
-                System.out.println("The dvd '" + dvd.getTitle() + "' has been removed from the store.");
-                break;
-            }
+    public void removeMedia(Media media) {
+        if (itemsInStore.contains(media)) {
+            itemsInStore.remove(media);
+            System.out.println("Đã xóa \"" + media.getTitle() + "\" khỏi cửa hàng.");
+        } else {
+            System.out.println("Không tìm thấy sản phẩm.");
         }
-        if (!isFound) {
-            System.out.println("The dvd '" + dvd.getTitle() + "' is not in the store.");
+    }
+
+    public ArrayList<Media> getItemsInStore() {
+        return itemsInStore;
+    }
+
+    public Media searchByTitle(String title) {
+        for (Media media : itemsInStore) {
+            if (media.getTitle().equalsIgnoreCase(title)) return media;
+        }
+        return null;
+    }
+
+    public void printStore() {
+        System.out.println("\n--- DANH SÁCH CỬA HÀNG AIMS ---");
+        for (Media media : itemsInStore) {
+            System.out.println(media.getId() + ". " + media.toString());
         }
     }
 }
