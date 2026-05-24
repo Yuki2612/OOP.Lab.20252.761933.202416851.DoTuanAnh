@@ -1,0 +1,14 @@
+
+
+Question 1: Why do we make the Media class an abstract class?
+Answer: 
+We make 'Media' an abstract class because it represents a generic concept. We never want a programmer to create a generic "Media" object (e.g., new Media()). Instead, we only want to instantiate concrete objects like Book, DigitalVideoDisc, or CompactDisc. Making it abstract forces inheritance and prevents direct instantiation, while still allowing us to group common attributes (id, title, category, cost) and methods.
+
+Question 2: What is the purpose of the Playable interface? Why not make play() an abstract method in Media?
+Answer:
+The 'Playable' interface specifies a capability that an object can perform. Not all Media types can be "played" (for example, a Book cannot be played, it can only be read). If we put play() as an abstract method in the Media class, then Book would be forced to implement it, which violates object-oriented design logic. By using an interface, only media types that are actually runnable (like DVD and CD) will implement 'Playable'.
+
+Question 3: Explain how polymorphism is applied in the Cart and Store classes in Lab 04.
+Answer:
+In Lab 03, Cart and Store could only hold DigitalVideoDisc[] arrays. 
+In Lab 04, by changing the internal storage to ArrayList<Media>, we utilize polymorphism. The collection can now hold any subclass of Media (Book, DVD, CD). When we call methods like media.toString() or when checking equality, Java will automatically trigger the overridden methods of the actual subclass at runtime (Dynamic Binding).
