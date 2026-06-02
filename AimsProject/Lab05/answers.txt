@@ -1,0 +1,5 @@
+Task 1.3: Differences between Swing and AWT elements:
+Các top-level container (thành phần cấp cao nhất): Trong AWT, các top-level container là Frame, Dialog và Applet. Trong Swing, các top-level container tương ứng có thêm tiền tố 'J': JFrame, JDialog và JApplet.
+Tên các thành phần (Component class names): Các thành phần AWT được đặt tên là Button, Label, TextField, v.v. Các thành phần tương ứng trong Swing có thêm tiền tố 'J', trở thành JButton, JLabel, JTextField, v.v.
+Task 14: What happens when you don't update for them to catch?
+Vì PlayerException kế thừa từ Exception, nó là một Checked Exception (ngoại lệ kiểm tra). Nếu chúng ta gọi phương thức play() (vốn khai báo throws PlayerException) mà không bọc nó trong khối try-catch hoặc khai báo ngoại lệ đó trong chữ ký (signature) của phương thức gọi, trình biên dịch Java sẽ ngay lập tức đưa ra lỗi biên dịch ("Unhandled exception type PlayerException"). Chương trình sẽ không thể biên dịch và chạy được.
